@@ -3,10 +3,10 @@ const React = require('react');
 function Head({ userName }) {
   return (
     <div className="card" style={{
-        display: 'flex',
-        justifyContent: 'center',
-        width: '100vh',
-      }} >
+      display: 'flex',
+      justifyContent: 'center',
+      width: '100%',
+    }} >
         {userName ? (<>
             <span>{userName}</span>
             <span>home</span>
@@ -22,5 +22,7 @@ function Head({ userName }) {
     </div>
   )
 }
+
+
 
 module.exports = Head;
