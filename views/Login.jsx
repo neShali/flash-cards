@@ -4,7 +4,7 @@ const Layout = require('./Layout');
 function Login({ }) {
   return (
     <Layout >
-     <form method="post" action='/home' className="inline">
+     <form method="post" action="/user" className="inline">
   <div className="mb-3">
     <label form="exampleInputEmail1" className="form-label">NickName</label>
     <input type="text" name="name" className="form-control" id="exampleInputEmail1" />

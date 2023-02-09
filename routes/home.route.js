@@ -5,25 +5,12 @@ const {
 } = require('../db/models');
 
 router.route('/')
-  .get((req, res) => {
+  .get(async (req, res) => {
+    const themes = await Deck.findAll({ raw: true, attributes: ['theme'] });
+    const theme = themes.map((el) => el.theme);
     res.renderComponent(Home, {
-      userName: 'Nikita', themeOne: 'cat', themeTwo: 'krot', themeThree: 'scoth',
+      userName: '', themeOne: theme[0], themeTwo: theme[1], themeThree: theme[2],
     });
   })
-  .post(async (req, res) => {
-    const { name, password } = req.body;
-    if (name && password) {
-      const findLogin = await User.findOne({ where: { name } });
-      if (!findLogin) {
-        await User.create({
-          name,
-          password,
-        });
-      }
-    }
-    await res.renderComponent(Home, {
-    userName: name, themeOne: 'cat', themeTwo: 'krot', themeThree: 'scoth',
-    });
-  });
-
+  
 module.exports = router;
