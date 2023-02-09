@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const Home = require('../views/Home');
-// const User = require('../db/models/User')
+const {
+  User, Round, Deck, Card,
+} = require('../db/models');
 
 router.route('/')
   .get((req, res) => {
@@ -9,17 +11,18 @@ router.route('/')
     });
   })
   .post(async (req, res) => {
-    if (req.body.name && req.body.password) {
-      const findLogin = await User.findOne({ where: { name: req.body.name } });
+    const { name, password } = req.body;
+    if (name && password) {
+      const findLogin = await User.findOne({ where: { name } });
       if (!findLogin) {
         await User.create({
-          name: req.body.name,
-          password: req.body.password,
+          name,
+          password,
         });
-      } 
+      }
     }
-    res.renderComponent(Home, {
-      userName: req.body.name, themeOne: 'cat', themeTwo: 'krot', themeThree: 'scoth',
+    await res.renderComponent(Home, {
+    userName: name, themeOne: 'cat', themeTwo: 'krot', themeThree: 'scoth',
     });
   });
 
