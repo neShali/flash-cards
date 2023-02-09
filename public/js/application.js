@@ -1,10 +1,21 @@
-// const login = document.querySelector('#login');
+const table = document.querySelector('.table');
 
-// login.addEventListener('click', async (event) => {
-//     event.preventDefault()
-//     const response = await fetch('/login');
-//     const data
-    
+table.addEventListener('click', async (event) => {
+  event.preventDefault();
+  if (event.target.classList.contains('chooseDeck')) {
+    const deck = event.target.getAttribute('id');
+    console.log(deck);
+    const response = await fetch(`/user/${deck}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify({
+        deck,
+      }),
+    });
+    const data = await response.json()
+    event.target.parentNode.remove();
 
-// }
-// )
+  }
+});

@@ -9,13 +9,13 @@ function Head({ userName }) {
     }} >
         {userName ? (<>
             <span>{userName}</span>
-            <span>home</span>
-            <span>logOut</span>
+            <a href="/user" style={{textDecoration: 'none'}} >home</a>
+            <a href="/home" style={{textDecoration: 'none'}} >logOut</a>
             </>
         ) : (
             <>
-            <span>login</span>
-            <span>home</span>
+            <a href="/login" style={{textDecoration: 'none'}} >login</a>
+            <a href="/home" style={{textDecoration: 'none'}} >home</a>
             </>
         )
     }
