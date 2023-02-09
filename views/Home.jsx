@@ -5,7 +5,7 @@ const Table = require('./Table');
 
 function Home({ userName, themeOne, themeTwo, themeThree }) {
   return (
-    <Layout>
+    <Layout >
       <Head userName={userName} />
       <Table themeOne={themeOne} themeTwo={themeTwo} themeThree={themeThree} />
 
