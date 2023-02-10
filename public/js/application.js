@@ -1,4 +1,4 @@
-const table = document.querySelector('.table');
+const table = document.querySelector('#table');
 
 table.addEventListener('click', async (event) => {
   event.preventDefault();
