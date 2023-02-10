@@ -1,16 +1,15 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-
-    const themes = ["first", "second", "third"];
+  async up(queryInterface, Sequelize) {
+    const themes = ["Эффект Манделы", "Блатная хата", "Вопросы о высоком"];
     const a = themes.map((theme) => ({
       theme,
       createdAt: new Date(),
       updatedAt: new Date(),
     }));
-    await queryInterface.bulkInsert('Decks', a);
+    await queryInterface.bulkInsert("Decks", a);
     /**
      * Add seed commands here.
      *
@@ -19,15 +18,15 @@ module.exports = {
      *   name: 'John Doe',
      *   isBetaMember: false
      * }], {});
-    */
+     */
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-  }
+  },
 };
