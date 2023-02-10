@@ -3,7 +3,7 @@ const Deck = require('./Deck');
 
 function Table({ themeOne, themeTwo, themeThree }) {
   return (
-    <div style={{
+    <div id="table" style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
