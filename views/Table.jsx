@@ -5,9 +5,11 @@ function Table({ themeOne, themeTwo, themeThree }) {
   return (
     <div id="table" style={{
       display: 'flex',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
       height: '100vh',
+      width: '75%',
+      margin: 'auto',
     }}>
         <Deck theme={themeOne}/>
         <Deck theme={themeTwo}/>
