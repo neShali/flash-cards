@@ -20,3 +20,15 @@ table.addEventListener('click', async (event) => {
 
   }
 });
+
+// table.addEventListener('click', async (event) => {
+//     event.preventDefault();
+//     console.log(event.target);
+//     // if (event.target.classList.contains('chooseDeck')) {
+//     //   const deck = event.target.getAttribute('id');
+//     //   // console.log(deck);
+//     //   console.log(data)
+//     //   // event.target.parentNode.remove();
+  
+//     })
+  

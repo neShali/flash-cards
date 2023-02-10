@@ -11,7 +11,7 @@ router.route('/')
     const cards = await Card.findAll({ raw: true, where: { deck_id: deck.id } });
     console.log(cards);
 
-    res.renderComponent(Cards, {}, {doctype: false});
+    res.renderComponent(Cards, { }, {doctype: false});
   });
 
 module.exports = router;

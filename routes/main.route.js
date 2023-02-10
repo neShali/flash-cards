@@ -5,4 +5,4 @@ router.route('/')
     res.redirect('/home');
   });
 
-  module.exports = router
+module.exports = router
