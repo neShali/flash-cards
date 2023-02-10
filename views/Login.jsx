@@ -4,10 +4,10 @@ const Layout = require('./Layout');
 function Login({ }) {
   return (
     <Layout >
-     <form method="post" action='login/name' className="inline">
+     <form method="post" action='/home'  className="inline">
   <div class="mb-3">
     <label for="exampleInputEmail1" className="form-label">NickName</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+    <input type="text" className="form-control" id="exampleInputEmail1" />
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" className="form-label">Password</label>
