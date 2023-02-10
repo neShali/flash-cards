@@ -2,7 +2,9 @@ const router = require('express').Router();
 
 router.route('/')
   .get((req, res) => {
-    res.redirect('/login');
+    
+
+    res.redirect('/home');
   });
 
   module.exports = router

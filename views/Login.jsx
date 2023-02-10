@@ -4,6 +4,7 @@ const Layout = require('./Layout');
 function Login({ }) {
   return (
     <Layout >
+      <section className='container mt-5'>
      <form method="post" action="/user" className="inline">
   <div className="mb-3">
     <label form="exampleInputEmail1" className="form-label">NickName</label>
@@ -14,7 +15,8 @@ function Login({ }) {
     <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
   </div>
   <button type="submit" className="btn btn-primary">Go registration</button>
-</form>
+ </form>
+   </section>
     </Layout >
   )
 }

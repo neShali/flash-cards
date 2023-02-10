@@ -2,20 +2,21 @@ const React = require('react');
 
 function Head({ userName }) {
   return (
-    <div className="card" style={{
-      display: 'flex',
-      justifyContent: 'center',
+    <div  className="container px-4 text-center mt-5" style={{
+      display: 'inline-flex',
+      justifyContent: 'flex-end',
       width: '100%',
+      alignItems: 'center',
     }} >
         {userName ? (<>
-            <span>{userName}</span>
-            <a href="/user" style={{textDecoration: 'none'}} >home</a>
-            <a href="/home" style={{textDecoration: 'none'}} >logOut</a>
+            <a href="#" style={{textDecoration: 'none', marginLeft: '10px'}} >{userName}</a>
+            <a href="#" style={{textDecoration: 'none', marginLeft: '10px'}} >home</a>
+            <a href="/home" style={{textDecoration: 'none', marginLeft: '10px'}} >logOut</a>
             </>
         ) : (
             <>
-            <a href="/login" style={{textDecoration: 'none'}} >login</a>
-            <a href="/home" style={{textDecoration: 'none'}} >home</a>
+            <a href="/login" style={{textDecoration: 'none', marginLeft: '10px'}} >login</a>
+            <a href="/home" style={{textDecoration: 'none', marginLeft: '10px'}} >home</a>
             </>
         )
     }
