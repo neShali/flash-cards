@@ -21,7 +21,7 @@ app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/user', userRouter);
 app.use('/theme/:id', cardsRouter);
-// app.use('/answer/:id', answerRouter);
+app.use('/answer/:id', answerRouter);
 
 // Listener
 app.listen(PORT, () => {

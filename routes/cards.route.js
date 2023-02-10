@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Home = require('../views/Home');
-const Cards = require('../views/Cards')
+const Cards = require('../views/Cards');
+const Table = require('../views/Table');
 const {
   User, Round, Deck, Card,
 } = require('../db/models');
@@ -22,7 +23,13 @@ router.route('/')
      answer.push([answerRight, question, answerOne, answerTwo, answerThree]);
     }
     console.log(answer);
+    if(answer.length >= j + 1) {
     res.renderComponent(Cards, {theme: req.body.deck, question: answer[j][1], answerOne: answer[j][2], answerTwo: answer[j][3], answerThree: answer[j][4]}, {doctype: false});
+    } else {
+      const themes = await Deck.findAll({ raw: true, attributes: ['theme'] });
+      const theme = themes.map((el) => el.theme);
+      res.renderComponent(Table, {themeOne: theme[0], themeTwo: theme[1], themeThree: theme[2]}, {doctype: false});
+    }
   });
 
 module.exports = router;
