@@ -19,7 +19,7 @@ app.use('/', mainRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/user', userRouter);
-app.use('/user/:id', cardsRouter);
+app.use('/theme/:id', cardsRouter);
 
 // Listener
 app.listen(PORT, () => {
