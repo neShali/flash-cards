@@ -4,8 +4,8 @@ table.addEventListener('click', async (event) => {
   event.preventDefault();
   if (event.target.classList.contains('chooseDeck')) {
     const deck = event.target.getAttribute('id');
-    console.log(deck);
-    const response = await fetch(`/user/${deck}`, {
+    // console.log(deck);
+    const response = await fetch(`/theme/${deck}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'Application/json',
@@ -14,8 +14,9 @@ table.addEventListener('click', async (event) => {
         deck,
       }),
     });
-    const data = await response.json()
-    event.target.parentNode.remove();
+    const data = await response.text()
+    console.log(data)
+    // event.target.parentNode.remove();
 
   }
 });

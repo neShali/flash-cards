@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Home = require('../views/Home');
+const Cards = require('../views/Cards')
 const {
   User, Round, Deck, Card,
 } = require('../db/models');
@@ -10,7 +11,7 @@ router.route('/')
     const cards = await Card.findAll({ raw: true, where: { deck_id: deck.id } });
     console.log(cards);
 
-    res.json();
+    res.renderComponent(Cards, {}, {doctype: false});
   });
 
 module.exports = router;
