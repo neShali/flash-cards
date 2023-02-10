@@ -11,7 +11,7 @@ function Layout({ children }) {
         <script defer src="/js/application.js"></script>
         <title>flash-cards</title>
       </head>
-      <body>
+      <body >
         {children}
       </body>
     </html>
