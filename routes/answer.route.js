@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Home = require('../views/Home');
-const Cards = require('../views/Cards')
+const Cards = require('../views/Cards');
+const Table = require('../views/Table');
 const {
   User, Round, Deck, Card,
 } = require('../db/models');
