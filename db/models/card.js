@@ -15,16 +15,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   Card.init({
     question: {
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
     answer: {
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
     answer_r: {
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
     deck_id: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       references: {
         model: 'Deck',
         key: 'id',
@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Card',
-  });
+  }
+  );
   return Card;
 };
