@@ -8,6 +8,7 @@ const homeRouter = require('./routes/home.route');
 const loginRouter = require('./routes/login.route');
 const userRouter = require('./routes/user.route');
 const cardsRouter = require('./routes/cards.route');
+const answerRouter = require('./routes/answer.route');
 
 
 const PORT = process.env.PORT ?? 3000;
@@ -19,7 +20,8 @@ app.use('/', mainRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/user', userRouter);
-app.use('/user/:id', cardsRouter);
+app.use('/theme/:id', cardsRouter);
+// app.use('/answer/:id', answerRouter);
 
 // Listener
 app.listen(PORT, () => {
