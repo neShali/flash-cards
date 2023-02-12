@@ -9,7 +9,7 @@ function Deck({ theme }) {
     <div className="card-body">
     <h5 className="card-title">{theme}</h5>
     <p className="card-text">Хочешь сыграть в квиз на тему: {theme}? Клацай на кнопку ниже!</p>
-    <button type="submit" className="btn btn-primary chooseDeck" data = {theme}>Начать ебанутый опрос</button>
+    <button type="submit" className="btn btn-primary chooseDeck" data = {theme}>Выбрать</button>
     </div>
     </div>
   )

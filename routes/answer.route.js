@@ -10,7 +10,6 @@ router.route('/')
   .post(async (req, res) => {
     const deck = await Deck.findOne({ raw: true, where: { theme: req.body.deck }, attributes: ['id'] });
     const cards = await Card.findAll({ raw: true, where: { deck_id: deck.id } });
-    console.log(req.body);
     let obj = {
       score: 0,
       status: false,
